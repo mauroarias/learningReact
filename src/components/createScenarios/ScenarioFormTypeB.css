@@ -1,0 +1,15 @@
+  .scenario__label {
+    color: white;
+    float: left;
+    padding: 14px;
+  }
+
+  .scenario__input {
+    padding: 12px;
+    margin: 1px auto;
+    float: left;
+  }
+
+  .scenario__input_small {
+    width: 5rem;
+  }

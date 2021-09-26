@@ -1,0 +1,10 @@
+.collection {
+    background-color: #a892ee;
+    padding: 10px;
+    margin: 1px;
+    width: 70rem;
+    max-width: 97%;
+    float: left;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }

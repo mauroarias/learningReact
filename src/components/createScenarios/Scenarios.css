@@ -1,0 +1,37 @@
+  .scenarios__collections {
+    padding: 5px;
+    margin: 1px auto;
+    width: 70rem;
+    max-width: 100%;
+    float: left;
+  }
+
+  .scenarios__collection_name {
+    font-weight: bold;
+    color: black;
+    font-size: x-large;
+    float: left;
+    padding: 8px;
+  }
+
+  .scenarios__button {
+    float: right;
+  }
+
+  .scenario__panel {
+    padding: 10px;
+    margin: 1px;
+    width: 70rem;
+    max-width: 100%;
+    float: left;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .scenario__panel_not_border {
+    padding: 10px;
+    margin: 1px;
+    width: 70rem;
+    max-width: 100%;
+    float: left;
+  }

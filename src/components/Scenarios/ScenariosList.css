@@ -1,0 +1,16 @@
+  .scenarios {
+    font: inherit;
+    background-color: #a892ee;
+    padding: 10px;
+    margin: 12px auto;
+    width: 50rem;
+    max-width: 95%;
+    float: left;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+
+ .scenarios label {
+    color: white;
+    padding: 1rem;
+  }
