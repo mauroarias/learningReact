@@ -10,7 +10,7 @@ const Menu = (props) => {
     }
 
     return (
-        <div className="menu">
+        <div className='menu'>
             {props.type === 'create' && <CreateMenu onReset={resetHandler}/>}
             {props.type === 'show' && <Scenarios/>}
         </div>

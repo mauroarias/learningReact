@@ -22,7 +22,7 @@ const Scenarios = (props) => {
 
     const summitingScenario = (newData) => {
         const clone = [...data];
-        clone.push([newData.name, newData.id, newData.type, newData.endDate, newData.param1, newData.param2, newData.perso]);
+        clone.push([newData.name, newData.type, newData.id, newData.endDate, newData.param1, newData.param2, newData.perso]);
         setData(clone)
         setAddScenario(false);
     }

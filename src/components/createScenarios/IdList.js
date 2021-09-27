@@ -10,15 +10,11 @@ const IdList = (props) => {
     const ids = ['id1', 'id2', 'id3', 'id4', 'id5', 'id6'];
     return (
         <div>
-            <div className='id__label'>
-                <label>id</label>
-            </div>
-            <div className='id__input'>
-                <select onChange={idChangeHandler}>
-                    <option></option>
-                    {ids.map((id) => (<option>{id}</option>))}
-                </select>
-            </div>
+            <label>id</label>
+            <select onChange={idChangeHandler}>
+                <option></option>
+                {ids.map((id) => (<option>{id}</option>))}
+            </select>
         </div>
     )
 }

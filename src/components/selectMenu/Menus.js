@@ -1,6 +1,7 @@
 import './Menus.css'
 import Menu from './Menu';
 import React, {useState} from 'react';
+import Button from '../UI/Button';
 
 const Menus = (props) => {
 
@@ -24,12 +25,12 @@ const Menus = (props) => {
 
     return (
         <div>
-            <div className="menus">
+            <div className='menus'>
                 <div className="menus__div">
-                    <button onClick={showCreateCollectionHandler}>Create collection</button>
+                    <Button onClick={showCreateCollectionHandler}>Create collection</Button>
                 </div>
                 <div className="menus__div">
-                    <button onClick={showCollectionHandler}>Collections</button>
+                    <Button onClick={showCollectionHandler}>Collections</Button>
                 </div>
             </div>
             {isShowMenu && <Menu onReset={resetHandler} type={menuChoose}/>}

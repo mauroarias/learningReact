@@ -17,7 +17,7 @@ const ScenarionsView = (props) => {
         filter: false,
         sort: false,
         onRowsDelete: (rowsDeleted, dataRows) => {
-            onDelete(dataRows);
+            // onDelete(dataRows);
         },
         onRowClick: {selectingRowHandler}
     };

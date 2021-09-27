@@ -6,10 +6,13 @@ import React, {useState} from 'react'
 const ScenarioFormTypeA = (props) => {
 
     const [data, setData] = useState({});
+    const [summitEvent, setSummitEvent] = useState(false);
 
     const summitHandler = () => {
         if (data && data.name && data.id && data.endDate && data.param1 && data.param2) {
-            props.onSummit(data);
+            props.onSummit({...data, type:'typeA'});
+        } else {
+            setSummitEvent(true);
         }
     } 
 
@@ -24,7 +27,7 @@ const ScenarioFormTypeA = (props) => {
     return (
         <div>
             <div>
-                <CommonScenarioForm onChangeData={changeDataHander} type='Adding scenario Type A'/>
+                <CommonScenarioForm summitEvent={summitEvent} onChangeData={changeDataHander} type='Adding scenario Type A'/>
             </div>
             <div>
                 <FormActions onReset={resetHandler} resetLabel='cancel' onSummit={summitHandler} summitLabel='summit scenario'/>

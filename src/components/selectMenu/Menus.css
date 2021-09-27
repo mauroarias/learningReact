@@ -21,31 +21,3 @@
     justify-content: center;
     align-items: center;
   }
-
-  .menus button {
-    font: inherit;
-    cursor: pointer;
-    padding: 8px 2rem;
-    border: 1px solid #40005d;
-    background-color: #40005d;
-    color: white;
-    border-radius: 12px;
-    margin-right: 1rem;
-  }
-
-  .menus button:hover,
-  .menus button:active {
-    background-color: #510674;
-    border-color: #510674;
-  }
-  
-  .menus button.alternative {
-    color: #220131;
-    border-color: transparent;
-    background-color: transparent;
-  }
-  
-  .menus button.alternative:hover,
-  .menus     button.alternative:active {
-    background-color: #ddb3f8;
-  }

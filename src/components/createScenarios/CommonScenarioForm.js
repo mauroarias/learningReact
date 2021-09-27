@@ -1,6 +1,7 @@
 import './CommonScenarioForm.css'
 import IdList from './IdList';
 import React, {useState} from 'react';
+import InputValidationPanel from '../UI/InputValidationPanel';
 
 const CommonScenarioForm = (props) => {
 
@@ -43,46 +44,30 @@ const CommonScenarioForm = (props) => {
     return (
         <div>
             <label className='scenario__type_label'>{props.type}</label>
-            <div>
-                <div className='scenario__label'>
-                    <label>name</label>
-                </div>
-                <div value={name} onChange={scenarioNameChangeHandler} className='scenario__input'>
-                    <input type='text'/>
-                </div>
-            </div>
-            <div>
+            <InputValidationPanel showError={props.summitEvent} invalid={!name}>
+                <label>name</label>
+                <input value={name} onChange={scenarioNameChangeHandler} type='text'/>
+            </InputValidationPanel>
+            <InputValidationPanel showError={props.summitEvent} invalid={!id}>
                 <IdList onChangeId={scenarioIdChangeHandler}/>
-            </div>
-            <div>
-                <div className='scenario__label'>
-                    <label>endDate</label>
-                </div>
-                <div className='scenario__input'>
-                    <select onChange={scenarioEndDateChangeHandler} >
-                        <option></option>
-                        <option>yesterday</option>
-                        <option>today</option>
-                        <option>tomorrow</option>
-                    </select>
-                </div>
-            </div>
-            <div>
-                <div className='scenario__label'>
-                    <label>parameter 1</label>
-                </div>
-                <div className='scenario__input'>
-                    <input onChange={scenarioParam1ChangeHandler} type='text'/>
-                </div>
-            </div>
-            <div>
-                <div className='scenario__label'>
-                    <label>parameter 2</label>
-                </div>
-                <div className='scenario__input'>
-                    <input onChange={scenarioParam2ChangeHandler} className='scenario__input_small' type='number' min='0.01' step='0.01'/>
-                </div>
-            </div>                
+            </InputValidationPanel>
+            <InputValidationPanel showError={props.summitEvent} invalid={!endDate}>
+                <label>endDate</label>
+                <select onChange={scenarioEndDateChangeHandler}>
+                    <option></option>
+                    <option>yesterday</option>
+                    <option>today</option>
+                    <option>tomorrow</option>
+                </select>
+            </InputValidationPanel>
+            <InputValidationPanel showError={props.summitEvent} invalid={!param1}>
+                <label>parameter 1</label>
+                <input onChange={scenarioParam1ChangeHandler} type='text'/>
+            </InputValidationPanel>
+            <InputValidationPanel showError={props.summitEvent} invalid={!param2}>
+                <label>parameter 2</label>
+                <input onChange={scenarioParam2ChangeHandler} className='scenario__input_small' type='number' min='0.01' step='0.01'/>
+            </InputValidationPanel>                
         </div>
     );
 }

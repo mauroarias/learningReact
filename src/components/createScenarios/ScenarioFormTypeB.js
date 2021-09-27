@@ -2,11 +2,13 @@ import './ScenarioFormTypeB.css'
 import CommonScenarioForm from './CommonScenarioForm'
 import FormActions from '../UI/FormActions'
 import React, {useState} from 'react'
+import InputValidationPanel from '../UI/InputValidationPanel'
 
 const ScenarioFormTypeB = (props) => {
 
     const [perso, setPerso] = useState({});
     const [data, setData] = useState({});
+    const [summitEvent, setSummitEvent] = useState(false);
 
     const personalizationAChangeHandler = (event) => {
         setPerso({...perso, persoA: event.target.value});
@@ -20,8 +22,10 @@ const ScenarioFormTypeB = (props) => {
 
     const summitHandler = () => {
         if (data && data.name && data.id && data.endDate && data.param1 && data.param2 && data.perso && data.perso.persoA && data.perso.persoB) {
-            const clone = {...data, perso: JSON.stringify(perso)};
+            const clone = {...data, perso: JSON.stringify(perso), type:'typeB'};
             props.onSummit(clone);
+        } else {
+            setSummitEvent(true);
         }
     } 
 
@@ -36,25 +40,17 @@ const ScenarioFormTypeB = (props) => {
     return (
         <div>
             <div>
-                <CommonScenarioForm onChangeData={changeDataHander} type='Adding scenario Type B'/>
+                <CommonScenarioForm summitEvent={summitEvent} onChangeData={changeDataHander} type='Adding scenario Type B'/>
             </div>
             <div>
-                <div>
-                    <div className='scenario__label'>
-                        <label>personalization A</label>
-                    </div>
-                    <div className='scenario__input'>
-                        <input onChange={personalizationAChangeHandler} type='text'/>
-                    </div>
-                </div>
-                <div>
-                    <div className='scenario__label'>
-                        <label>personalization B</label>
-                    </div>
-                    <div className='scenario__input'>
-                        <input onChange={personalizationBChangeHandler}  className='scenario__input_small' type='number' min='0.01' step='0.01'/>
-                    </div>
-                </div>                
+                <InputValidationPanel showError={summitEvent} invalid={!(perso && perso.persoA)}>
+                    <label>personalization A</label>
+                    <input onChange={personalizationAChangeHandler} type='text'/>
+                </InputValidationPanel>
+                <InputValidationPanel showError={summitEvent} invalid={!(perso && perso.persoB)}>
+                    <label>personalization B</label>
+                    <input onChange={personalizationBChangeHandler}  className='scenario__input_small' type='number' min='0.01' step='0.01'/>
+                </InputValidationPanel>                
             </div>
             <div>
                 <FormActions onReset={resetHandler} resetLabel='cancel' onSummit={summitHandler} summitLabel='summit scenario'/>

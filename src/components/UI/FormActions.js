@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './FormActions.css'
+import Button from './Button';
 
 const FormActions = (props) => {
 
@@ -24,8 +25,8 @@ const FormActions = (props) => {
 
     return (
         <div className='actions'>
-            {resetVisible && <button onClick={resetHandler}>{props.resetLabel}</button>}
-            {summitVisible && <button onClick={summitHandler}>{props.summitLabel}</button>}
+            {resetVisible && <Button onClick={resetHandler}>{props.resetLabel}</Button>}
+            {summitVisible && <Button onClick={summitHandler}>{props.summitLabel}</Button>}
         </div>
     );
 }
